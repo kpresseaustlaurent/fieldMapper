@@ -1,6 +1,6 @@
 {
     "SingleLabel": "SingleField",
-    "Multiple": [
+    "ListOfInfos": [
         {
             "Info1": "Bob",
             "Info2": "Gratton"

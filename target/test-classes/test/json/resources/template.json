@@ -1,4 +1,4 @@
 {
     "Single": "{SingleLabel}",
-    "Multiple": "{Multiple:[Info1]/[Info2]}"
+    "Multiple": "{ListOfInfos:[Info1]/[Info2]}"
 }
