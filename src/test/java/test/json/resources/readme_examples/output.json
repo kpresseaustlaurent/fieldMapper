@@ -1,0 +1,5 @@
+{
+    "Single": "SingleField",
+    "Multiple": "Bob/Gratton, Tim/Smith",
+    "Nested" : "ABBA/collection(Animal:Wolf, Animal2:Dog), ACDC/collection"
+}
