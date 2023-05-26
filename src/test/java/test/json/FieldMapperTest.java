@@ -19,6 +19,7 @@ public class FieldMapperTest
         try {
             System.out.println(System.getProperty("user.dir"));
             String path = "src/test/java/test/json/resources/";
+            path += "readme_examples/";
             InputStream template = new FileInputStream(path+"template.json");
             InputStream results = new FileInputStream(path+"results.json");
             InputStream output = new FileInputStream(path+"output.json");

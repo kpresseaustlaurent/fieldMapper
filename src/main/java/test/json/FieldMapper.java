@@ -37,7 +37,7 @@ public class FieldMapper {
             JsonNode fieldValue = entry.getValue();
 
             if (fieldValue.isValueNode()) {
-                if (fieldValue.isTextual() && fieldValue.asText().contains("{")) {
+                if (fieldValue.isTextual() && fieldValue.asText().indexOf("{") == 0) {
                     valueSwap(template, results, fieldName, fieldValue.asText().replaceAll(INSIDE_CURLY_BRACES, "$1"));
                 }
             } else {
