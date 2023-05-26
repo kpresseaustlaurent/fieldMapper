@@ -28,7 +28,7 @@ public class FieldMapper {
             throw new IllegalArgumentException();
         }   
     }
-    
+
     private static void recursiveSwap(JsonNode template, JsonNode results) {
         Iterator<Entry<String, JsonNode>> fields = template.fields();
         while (fields.hasNext()) {
@@ -51,7 +51,7 @@ public class FieldMapper {
             String[] ops = splitString(op);
             String outer = ops[0];
             String inner = ops[1];
-            JsonNode outerNode = results.path(outer);
+            JsonNode outerNode = results.findValue(outer);
             String resultString = multiValueSwap(outerNode, outer, inner);
             ((ObjectNode) template).replace(fieldName, new TextNode(resultString));
         } else {
@@ -92,7 +92,7 @@ public class FieldMapper {
                 finalString = finalString + resultTemplate + lastChar;
             }
         } else {
-            finalString += outerNode.path(inner).asText();
+            finalString += outerNode.findValue(inner).asText();
         }
         return finalString.replace("()", "");
     }
