@@ -9,5 +9,26 @@
             "Info1": "Tim",
             "Info2": "Smith"
         }
+    ],
+    "NestedInfos": [
+        {
+            "firstSingle": "ABBA",
+            "secondSingle": "collection",
+            "innerList": [
+                {
+                    "name": "Animal",
+                    "value": "Wolf"
+                },
+                {
+                    "name": "Animal2",
+                    "value": "Dog"
+                }
+            ]
+        },
+        {
+            "firstSingle": "ACDC",
+            "secondSingle": "collection",
+            "innerList": []
+        }
     ]
 }

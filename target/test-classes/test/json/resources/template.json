@@ -1,4 +1,5 @@
 {
     "Single": "{SingleLabel}",
-    "Multiple": "{ListOfInfos:[Info1]/[Info2]}"
+    "Multiple": "{ListOfInfos~[Info1]/[Info2]}",
+    "Nested" : "{NestedInfos~[firstSingle]/[secondSingle]([innerList~[name]:[value]])}"
 }
