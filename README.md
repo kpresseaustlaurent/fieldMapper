@@ -1,6 +1,7 @@
 # fieldMapper
 Maps single or multiple fields from a template
-Template:
+
+### Template:
 
 ```
 {
@@ -9,7 +10,7 @@ Template:
     "Nested" : "{NestedInfos~[firstSingle]/[secondSingle]([innerList~[name]:[value]])}"
 }
 ```
-Results
+### Results:
 ```
 {
     "SingleLabel": "SingleField",
@@ -54,7 +55,7 @@ For multiple field mapping. The mapper will look at the node at ListOfInfos node
 all the values at the Info1 and Info2 fields and will zip them into a list formatted as the string
 on the right of the colon (:)
 
-Output:
+### Output:
 ```
 {
     "Single": "SingleField",
