@@ -9,7 +9,7 @@ Maps single or multiple fields from a template
     "Multiple": "{ListOfInfos:[Info1]/[Info2]}"
 }
 ```
-### Results
+### Results:
 ```
 {
     "SingleLabel": "SingleField",
