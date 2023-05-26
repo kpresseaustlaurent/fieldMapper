@@ -1,0 +1,13 @@
+{
+    "SingleLabel": "SingleField",
+    "Multiple": [
+        {
+            "Info1": "Bob",
+            "Info2": "Gratton"
+        },
+        {
+            "Info1": "Tim",
+            "Info2": "Smith"
+        }
+    ]
+}
