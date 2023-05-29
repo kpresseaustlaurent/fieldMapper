@@ -1,7 +1,7 @@
 # fieldMapper
 Maps single or multiple fields from a template.
 
-This algorithm makes 3 assumptions:
+This algorithm currently makes 3 assumptions:
 * The delimiters ({}, [], ~) are not used elsewhere
 * Parallel values are either empty or completely filled. This means no partial results.
 * No nested single field mapping.
