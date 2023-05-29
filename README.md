@@ -6,7 +6,8 @@ This algorithm currently makes 3 assumptions:
 * Parallel values are either empty or completely filled. This means no partial results.
 * No nested single field mapping.
 ## Single Field Mapping
-For single field mapping. The mapper will map the value of SingleLabel to the Single field
+For single field mapping. The mapper will map the value of the field inside curly braces to the field defined
+in the template.
 
 ## Multiple Fields Mapping
 For multiple field mapping. The mapper will look at the node with the field name that is on the left 
@@ -20,9 +21,7 @@ value2: b,d
     This is a string that will be repeated for each zipped set c/d.
 ```
 ## Nested Fields Mapping
-For nested field mapping, the mapper will look at multiple field mapping inside a previous multiple field mapping.
-Nested fields should be inside square brackets and have a main field on the left of the delimiter and a string
-with fields in square brackets([]) to map to.
+For nested field mapping, the mapper will look at the multiple field mappings inside a multiple field mapping.
 ### Template:
 
 ```
