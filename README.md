@@ -22,6 +22,8 @@ value2: b,d
 ```
 ## Nested Fields Mapping
 For nested field mapping, the mapper will look at the multiple field mappings inside a multiple field mapping.
+
+## Example:
 ### Template:
 
 ```
