@@ -8,7 +8,7 @@ For multiple field mapping. The mapper will look at the node with the field name
 of the delimiter(~) and extract the fields on the right of the delimiter. Labels between square brackets([]) are 
 extracted in parallel and are mapped to the string defined on the right of the delimiter.
 ```
-#Ex: somefield~This is a string that will be repeated for each zipped set [value1]/[value2].
+#Ex: [somefield~This is a string that will be repeated for each zipped set [value1]/[value2]]
 value1: a,c
 value2: b,d
 => This is a string that will be repeated for each zipped set [a]/[b], 
