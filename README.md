@@ -16,8 +16,8 @@ extracted in parallel and are mapped to the string defined on the right of the d
 #Ex: {somefield~This is a string that will be repeated for each zipped set [value1]/[value2]}
 value1: a,c
 value2: b,d
-=> This is a string that will be repeated for each zipped set [a]/[b], 
-    This is a string that will be repeated for each zipped set [c]/[d].
+=> This is a string that will be repeated for each zipped set a/b, 
+    This is a string that will be repeated for each zipped set c/d.
 ```
 ## Nested Fields Mapping
 For nested field mapping, the mapper will look at multiple field mapping inside a previous multiple field mapping.
