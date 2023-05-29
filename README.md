@@ -24,15 +24,7 @@ value2: b,d
 For nested field mapping, the mapper will look at the multiple field mappings inside a multiple field mapping.
 
 ## Example:
-### Template:
 
-```
-{
-    "Single": "{SingleLabel}",
-    "Multiple": "{ListOfInfos~[Info1]/[Info2]}",
-    "Nested" : "{NestedInfos~[firstSingle]/[secondSingle]([innerList~[name]:[value]])}"
-}
-```
 ### Results:
 ```
 {
@@ -68,6 +60,15 @@ For nested field mapping, the mapper will look at the multiple field mappings in
             "innerList": []
         }
     ]
+}
+```
+### Template:
+
+```
+{
+    "Single": "{SingleLabel}",
+    "Multiple": "{ListOfInfos~[Info1]/[Info2]}",
+    "Nested" : "{NestedInfos~[firstSingle]/[secondSingle]([innerList~[name]:[value]])}"
 }
 ```
 ### Output:
