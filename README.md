@@ -2,9 +2,9 @@
 Maps single or multiple fields from a template.
 
 This algorithm currently makes 3 assumptions:
-* The delimiters ({}, [], ~) are not used elsewhere. <sub> simple change if necessary</sub>
-* Parallel values are either empty or completely filled. This means no partial results. <sub>medium change if necessary</sub>
-* No nested single field mapping. <sub>medium change if necessary</sub>
+* The delimiters ({}, [], ~) are not used elsewhere. <sup> simple change if necessary</sup>
+* Parallel values are either empty or completely filled. This means no partial results. <sup>medium change if necessary</sup>
+* No nested single field mapping. <sup>medium change if necessary</sup>
 ## Single Field Mapping
 For single field mapping. The mapper will map the value of the field inside curly braces to the field defined
 in the template.
