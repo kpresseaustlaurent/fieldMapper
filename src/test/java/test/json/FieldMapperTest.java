@@ -17,7 +17,6 @@ public class FieldMapperTest
     public void fieldMapperTest() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            System.out.println(System.getProperty("user.dir"));
             String path = "src/test/java/test/json/resources/";
             path += "readme_examples/";
             InputStream template = new FileInputStream(path+"template.json");

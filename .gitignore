@@ -1,2 +1,4 @@
 target/*
 src/test/java/test/json/resources/complex_tests/*
+target/classes/test/json/FieldMapper.class
+target/test-classes/test/json/FieldMapperTest.class

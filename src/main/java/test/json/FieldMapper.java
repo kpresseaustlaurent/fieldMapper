@@ -52,36 +52,19 @@ public class FieldMapper {
             String outer = ops[0];
             String inner = ops[1];
             JsonNode outerNode = results.findValue(outer);
-            String resultString = multiValueSwap(outerNode, outer, inner);
+            String resultString = multiValueSwap(outerNode, inner);
             ((ObjectNode) template).replace(fieldName, new TextNode(resultString));
         } else {
             ((ObjectNode) template).replace(fieldName, results.findValue(op));
         }
     }
 
-    private static String multiValueSwap(JsonNode outerNode, String outer, String inner){
+    private static String multiValueSwap(JsonNode outerNode, String inner){
         String finalString = "";
 
         if(inner.contains("[")){
             List<String> labels = getLabelsInBraces(inner);
-            Map<String, List<JsonNode>> data = new HashMap<>();
-            for(String label: labels){
-                if (label.contains(DELIMITER)){
-                    String[] nestedLabels = splitString(label);
-                    String nestedOuter = nestedLabels[0];
-                    String nestedInner = nestedLabels[1];
-                    List<JsonNode> nesteds = outerNode.findValues(nestedOuter);
-                    List<JsonNode> nestedValues = new ArrayList<>();
-                    for (JsonNode nested : nesteds){
-                        String nestV = multiValueSwap(nested, nestedOuter, nestedInner);
-                        nestedValues.add(new TextNode(nestV));
-                    }
-                    data.put(label, nestedValues);
-                } else {
-                    data.put(label, outerNode.findValues(label));
-                }
-                
-            }
+            Map<String, List<JsonNode>> data = getParallelValues(outerNode, labels);
             final int SIZE = data.get(labels.get(0)).size();
             for(int i = 0; i < SIZE; i++){
                 String resultTemplate = inner;
@@ -96,7 +79,27 @@ public class FieldMapper {
         }
         return finalString.replace("()", "");
     }
-
+    private static Map<String, List<JsonNode>> getParallelValues(JsonNode outerNode, List<String> labels){
+        
+        Map<String, List<JsonNode>> data = new HashMap<>();
+        for(String label: labels){
+            if (label.contains(DELIMITER)){
+                String[] nestedLabels = splitString(label);
+                String nestedOuter = nestedLabels[0];
+                String nestedInner = nestedLabels[1];
+                List<JsonNode> nesteds = outerNode.findValues(nestedOuter);
+                List<JsonNode> nestedValues = new ArrayList<>();
+                for (JsonNode nested : nesteds){
+                    String nestV = multiValueSwap(nested, nestedInner);
+                    nestedValues.add(new TextNode(nestV));
+                }
+                data.put(label, nestedValues);
+            } else {
+                data.put(label, outerNode.findValues(label));
+            }
+        }
+        return data;
+    }
     public static List<String> getLabelsInBraces(String input) {
         List<String> words = new ArrayList<>();
         int bracketCount = 0;
