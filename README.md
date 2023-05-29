@@ -1,6 +1,23 @@
 # fieldMapper
 Maps single or multiple fields from a template
+## Single Field Mapping
+For single field mapping. The mapper will map the value of SingleLabel to the Single field
 
+## Multiple Fields Mapping
+For multiple field mapping. The mapper will look at the node with the field name that is on the left 
+of the delimiter(~) and extract the fields on the right of the delimiter. Labels between square brackets([]) are 
+extracted in parallel and are mapped to the string defined on the right of the delimiter.
+```
+#Ex: somefield~This is a string that will be repeated for each zipped set [value1]/[value2].
+value1: a,c
+value2: b,d
+=> This is a string that will be repeated for each zipped set [a]/[b], 
+    This is a string that will be repeated for each zipped set [c]/[d].
+```
+## Nested Fields Mapping
+For nested field mapping, the mapper will look at multiple field mapping inside a previous multiple field mapping.
+Nested fields should be inside square brackets and have a main field on the left of the delimiter and a string
+with fields in square brackets([]) to map to.
 ### Template:
 
 ```
@@ -47,14 +64,6 @@ Maps single or multiple fields from a template
     ]
 }
 ```
-## Single Field Mapping
-For single field mapping. The mapper will map the value of SingleLabel to the Single field
-
-## Multiple Fields Mapping
-For multiple field mapping. The mapper will look at the node at ListOfInfos node and get
-all the values at the Info1 and Info2 fields and will zip them into a list formatted as the string
-on the right of the colon (:)
-
 ### Output:
 ```
 {
