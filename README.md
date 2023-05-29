@@ -1,5 +1,9 @@
 # fieldMapper
-Maps single or multiple fields from a template
+Maps single or multiple fields from a template.
+This algorithm makes 3 assumptions:
+* The delimiters ({}, [], ~) are not used elsewhere
+* Parallel values are either empty or completely filled. This means no partial results.
+* No repeated single field mapping.
 ## Single Field Mapping
 For single field mapping. The mapper will map the value of SingleLabel to the Single field
 
