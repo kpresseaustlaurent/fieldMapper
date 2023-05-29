@@ -1,2 +1,3 @@
 target/*
 src/test/java/test/json/resources/complex_tests/*
+.vscode/*
